@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>Medicine</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" type="text/css"
+    href="{% static 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css' %}" />
+  <link rel="stylesheet" href="{% static 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css' %}" />
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
+  <link href="{% static 'https://fonts.googleapis.com/css?family=Poppins:400,600,700|Roboto:400,700&display=swap' %}" rel="stylesheet" />
+  <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+  <link href="{% static 'css/responsive.css' %}" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="hero_area">
+    <!-- Header Section -->
+    <header class="header_section">
+      <div class="container">
+        <div class="top_contact-container" style="background-color: #5bbcba; margin: unset;">
+          <div class="tel_container">
+            <a href="#">
+              <img src="{% static 'img/telephone-symbol-button.png' %}" alt="Call"> Call : +01 1234567890
+            </a>
+          </div>
+          <div class="social-container">
+            <a href="#" title="Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" title="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" title="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container pt-3">
+          <a class="navbar-brand" href="{% url 'index' %}">
+            <span>Pharmacy Using ChatBot</span>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="d-flex flex-column flex-lg-row align-items-center w-100 justify-content-between">
+              <ul class="navbar-nav">
+                <li class="nav-item {% if request.path == '/index/' %}active{% endif %}">
+                  <a class="nav-link" href="{% url 'index' %}">Home</a>
+                </li>
+                <li class="nav-item {% if request.path == '/about/' %}active{% endif %}">
+                  <a class="nav-link" href="{% url 'about' %}">About</a>
+                </li>
+                <li class="nav-item {% if request.path == '/chatbot/' %}active{% endif %}">
+                  <a class="nav-link" href="{% url 'ChatBot' %}">ChatBot</a>
+                </li>
+                <li class="nav-item {% if request.path == '/medicine/' %}active{% endif %}">
+                  <a class="nav-link" href="{% url 'medicine' %}">Medicine</a>
+                </li>
+                <li class="nav-item {% if request.path == '/order/' %}active{% endif %}">
+                  <a class="nav-link" href="{% url 'order' %}">Order</a>
+                </li>
+                <li class="nav-item {% if request.path == '/feedback/' %}active{% endif %}">
+                  <a class="nav-link" href="{% url 'Feedback' %}">Feedback</a>
+                </li>
+                <li class="nav-item {% if request.path == '/signup/' %}active{% endif %}">
+                  <a class="nav-link" href="{% url 'signup' %}">Register</a>
+                </li>
+                <li class="nav-item {% if request.path == '/login/' %}active{% endif %}">
+                  <a class="nav-link" href="{% url 'login' %}">Login</a>
+                </li>
+              </ul>
+              <!-- <form class="form-inline">
+                <input type="search" placeholder="Search">
+                <button class="btn my-2 my-sm-0 nav_search-btn" type="submit"></button>
+              </form> -->
+            </div>
+          </div>
+
+        </nav>
+      </div>
+    </header>
+    <!-- End Header Section -->
+
+    <!-- Page Content -->
+    {% block content %}{% endblock %}
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.js' %}"></script>
+  <script src="{% static 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'js/custom.js' %}"></script>
+
+</body>
+
+</html>
