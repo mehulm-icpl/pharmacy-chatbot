@@ -1,0 +1,153 @@
+<!--<!DOCTYPE html>
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <center>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="container">
+            <h1>Sign Up</h1>
+
+            <hr>
+            <label for="First Name">First Name</label>
+            <input type="text" placeholder="Enter First Name" name="first_name" id="fname" required><br><br>
+
+            <label for="Last Name">Last Name</label>
+            <input type="text" placeholder="Enter Last Name" name="last_name" id="lname" required><br><br>
+
+            <label for="email">Email</label>
+            <input type="email" placeholder="Enter Email" name="email" id="email" required><br><br>
+
+            <label for="Username">Username</label>
+            <input type="text" placeholder="Enter Username" name="username" id="email" required><br><br>
+
+            <label for="psw">Password</label>
+            <input type="password" placeholder="Enter Password" name="password1" id="psw" required><br><br>
+
+            <label for="psw-repeat">Repeat Password</label>
+            <input type="password" placeholder="Repeat Password" name="password2" id="psw repeat" required><br><br>
+
+            <button type="submit" class="registerbtn">Register</button>
+        </div>
+    </center>
+{% endblock %}
+</body>
+</html>-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+}
+
+.signup-container {
+    width: 400px;
+    margin: 100px auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #666;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #1e73be;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0d4e8c;
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.login-link a {
+    color: #1e73be;
+    text-decoration: none;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+    </style>
+</head>
+<body>
+    <div class="signup-container">
+        <h1>Sign Up</h1>
+        <form id="signupForm" action="#">
+            <div class="input-group">
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" required>
+            </div>
+            <div class="input-group">
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" required>
+            </div>
+            <div class="input-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="input-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="input-group">
+                <label for="confirmPassword">Confirm Password:</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required>
+            </div>
+            <button type="submit"><a href="{% url 'login' %}">Sign Up</a></button>
+            <p class="login-link">Already have an account? <a href="{% url 'login' %}">Login here</a></p>
+        </form>
+    </div>
+</body>
+</html>
